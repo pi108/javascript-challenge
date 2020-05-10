@@ -13,13 +13,13 @@ var tbody = d3.select("tbody");
 // ========================================================================================
 
 // Use the forEach feature to go through every ufo sighting in the provided datamn
-tableData.forEach(function(ufoSighting) {
-    console.log(ufoSighting);
+tableData.forEach(function(ufo) {
+    console.log(ufo);
     // For each ufo sighting, append one table row `tr` to the table body
     var row = tbody.append("tr");
 
     // Use the `Object.entries` feature to get the keys and values for each ufo sighting
-    Object.entries(ufoSighting).forEach(function([key, value]) {
+    Object.entries(ufo).forEach(function([key, value]) {
       console.log(key, value);
       // For each row, append a cell ("td") for every column and populate teh cell with the value
       var cell = row.append("td");
@@ -63,12 +63,12 @@ button.on("click", function() {
 // ========================================================================================    
 
     // Use the forEach feature to go through all the rows that match the selected filter criteria  
-    filteredData.forEach(function(selections) {   
-    console.log(selections);
+    filteredData.forEach(function(userSelection) {   
+    console.log(userSelection);
     // For each selection, append one table row `tr` to the table body
     var row = tbody.append("tr");
     // Use the `Object.entries` feature to get the keys and values for each selection
-    Object.entries(selections).forEach(function([key, value]) {
+    Object.entries(userSelection).forEach(function([key, value]) {
         console.log(key, value);
         // For each row, append a cell ("td") for every column and populate the cell with the value
         var cell = row.append("td");
