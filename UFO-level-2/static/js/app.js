@@ -1,79 +1,99 @@
-// Define a variable for the data in data.js
-var tableData = data;
-console.log(tableData);
+// ========================================================================================
+// Use d3 to point to the Table Body in the HTML File
+// ========================================================================================
 
-// Use d3 to point to the table body
 var tbody = d3.select("tbody");
 
 
 
+// ========================================================================================
+// Use d3 to point to the Filters Section in the HTML File
+// ========================================================================================
+
+var filters = d3.select("#filters");
+
+
 
 // ========================================================================================
-// LOAD THE DATA INTO A TABLE
+// declare a variable called labels which contain the filter fields in addition to date
 // ========================================================================================
 
-// Use the forEach feature to go through every ufo sighting in the provided datamn
-tableData.forEach(function(ufo) {
-    console.log(ufo);
-    // For each ufo sighting, append one table row `tr` to the table body
-    var row = tbody.append("tr");
+var labels = ["city","state","country","shape"];
 
-    // Use the `Object.entries` feature to get the keys and values for each ufo sighting
-    Object.entries(ufo).forEach(function([key, value]) {
-      console.log(key, value);
-      // For each row, append a cell ("td") for every column and populate teh cell with the value
-      var cell = row.append("td");
-      cell.text(value);
-    });
+
+
+// ========================================================================================
+// Get natching records for the specified input 
+// ========================================================================================
+
+var getMatchingRecords = (dt,flts) => {
+  var dateCapture = new Date(dt);
+  var records = []
+  data.forEach((i) => {
+    var dateDataset = new Date(i.datetime);
+      if (((dateDataset.getTime() === dateCapture.getTime()) || (dt === ""))
+      && ((flts[0] === i.city.toLowerCase()) || (flts[0] === ""))
+      && ((flts[1] === i.state.toLowerCase()) || (flts[1] === ""))
+      && ((flts[2] === i.country.toLowerCase()) || (flts[2] === ""))
+      && ((flts[3] === i.shape.toLowerCase()) || (flts[3] === ""))){
+          records.push(i);
+      }
+  });
+  return records;
+}
+
+
+
+// ========================================================================================
+// Update the table with the matching records 
+// ========================================================================================
+
+var updateTable = records => {
+  tbody.html("");
+
+  records.forEach((record) => {
+      var row = tbody.append("tr");
+      Object.values(record).forEach(value => {
+          var cell = row.append("td");
+          cell.text(value);
+      });
+  });
+}
+
+
+
+// ========================================================================================
+// Use d3 to point to the button 
+// ========================================================================================
+
+var button = d3.select("#filter-btn");
+
+
+
+// ========================================================================================
+// Define what need to happen when the Filter button is clicked 
+// ========================================================================================
+
+var handleInput = () => {
+
+  d3.event.preventDefault();
+
+  var flts = labels.map(label =>{
+      return d3.select(`#${label}`).property("value").toLowerCase();
   });
 
+  var dt = d3.select("#datetime").property("value");
+  
+  var records = getMatchingRecords(dt,flts);
+  updateTable(records);
+}
 
 
 
-// ========================================================================================
-// CAPTURE THE INPUT ELEMENT AND VALUE SPECIFIED IN THE SEARCH CRITERIA
-// ========================================================================================
+// ============================================================================================================================
+// Update the table with matching records when the Filter button is clicked after the criteria is specified by the user
+// ============================================================================================================================
 
-// Define a variable and use d3 to point to the button section of the HTML file
-var button = d3.select("#filter-btn");
-button.on("click", function() {
+button.on("click", handleInput);
 
-    tbody.html("");
-
-    // Define a variable and use d3 to point to the input element
-    var inputElement = d3.select("#input");
-    // Define a variable to get the input value 
-    var inputValue = inputElement.property("value");
-    // console.log input value
-    console.log(inputValue);
-    // Filter for the data that matches the input value 
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue ||
-                                                    sighting.city === inputValue ||
-                                                    sighting.state === inputValue ||
-                                                    sighting.country === inputValue ||
-                                                    sighting.shape === inputValue);
-    // console.log filter values
-    console.log(filteredData);
-
-
-
-
-// ========================================================================================
-// RETURN THE ROWS THAT MATCH THE INPUT ELEMENT AND VALUE SPECIFIED IN THE SEARCH CRITERIA
-// ========================================================================================    
-
-    // Use the forEach feature to go through all the rows that match the selected filter criteria  
-    filteredData.forEach(function(userSelection) {   
-    console.log(userSelection);
-    // For each selection, append one table row `tr` to the table body
-    var row = tbody.append("tr");
-    // Use the `Object.entries` feature to get the keys and values for each selection
-    Object.entries(userSelection).forEach(function([key, value]) {
-        console.log(key, value);
-        // For each row, append a cell ("td") for every column and populate the cell with the value
-        var cell = row.append("td");
-        cell.text(value);
-    });
-});
-});
 
