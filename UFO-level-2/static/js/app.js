@@ -26,7 +26,7 @@ var labels = ["city","state","country","shape"];
 // Get natching records for the specified input 
 // ========================================================================================
 
-var getMatchingRecords = (dt,flts) => {
+var gatherFilteredRecords = (dt,flts) => {
   var dateCapture = new Date(dt);
   var records = []
   data.forEach((i) => {
@@ -48,7 +48,7 @@ var getMatchingRecords = (dt,flts) => {
 // Update the table with the matching records 
 // ========================================================================================
 
-var updateTable = records => {
+var updateDataTable = records => {
   tbody.html("");
 
   records.forEach((record) => {
@@ -84,8 +84,8 @@ var handleInput = () => {
 
   var dt = d3.select("#datetime").property("value");
   
-  var records = getMatchingRecords(dt,flts);
-  updateTable(records);
+  var records = gatherFilteredRecords(dt,flts);
+  updateDataTable(records);
 }
 
 
