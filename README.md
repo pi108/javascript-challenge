@@ -41,4 +41,6 @@ This allows the user to query by any of the following criteria related to the uf
 * - Folder called “images” that contains the images used by the HTML file.
 * - Folder called “js” which contains the javascript file used by the HTML file.
 
+## IMAGE OF THE UFO LEVEL 2 WEBPAGE:
+![](UFO-level-2/static/images/UFO_Level_2_WebPage.PNG)
 
