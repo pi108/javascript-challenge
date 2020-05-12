@@ -20,9 +20,13 @@ This folder contains the following
 * Index.html file – this is used for the webpage. 
 This allows the user to query only by the date of the UFO sighting.
 * Folder called “static”. This folder contains the following:
-* - Folder called “css” that contains the CSS file used by the HTML file.
-* - Folder called “images” that contains the images used by the HTML file.
-* - Folder called “js” which contains the javascript file used by the HTML file.
+  * Folder called “css” that contains the CSS file used by the HTML file.
+  * Folder called “images” that contains the images used by the HTML file.
+  * Folder called “js” which contains the javascript file used by the HTML file.
+
+## IMAGE OF THE UFO LEVEL 1 WEBPAGE:
+![](UFO-level-1/static/images/UFO_Level_1_WebPage.PNG)
+
 2.	UFO-level 2: 
 This folder contains the following
 * Index.html file – this is used for the webpage. 
@@ -33,6 +37,19 @@ This allows the user to query by any of the following criteria related to the uf
 4.	Country
 5.	Shape
 * Folder called “static”. This folder contains the following:
-* - Folder called “css” that contains the CSS file used by the HTML file.
-* - Folder called “images” that contains the images used by the HTML file.
-* - Folder called “js” which contains the javascript file used by the HTML file.
+  * Folder called “css” that contains the CSS file used by the HTML file.
+  * Folder called “images” that contains the images used by the HTML file.
+  * Folder called “js” which contains the javascript file used by the HTML file.
+
+## IMAGE OF THE UFO LEVEL 2 WEBPAGE:
+![](UFO-level-2/static/images/UFO_Level_2_WebPage.PNG)
+
+## Additional Information: CIA's Website with Photos of UFOs:
+The following website contains declassified photos and articles of UFOs published by the CIA.
+https://www.cia.gov/library/readingroom/docs/CIA-RDP79B00752A000300130001-1.pdf
+
+
+## Additional Information: Best Podcasts, Documentaries and Websites related to UFOs:
+The following website contains information regarding the best podcasts, documentaries and websites related to UFOs.
+https://www.vice.com/en_us/article/n7jgmg/how-to-get-into-ufos
+
