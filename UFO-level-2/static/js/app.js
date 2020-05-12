@@ -6,6 +6,23 @@ var tbody = d3.select("tbody");
 
 
 
+
+// ========================================================================================
+// Load the entire data table when the webpage is loaded
+// ========================================================================================
+
+
+data.forEach((record) => 
+{
+  var row = tbody.append("tr");
+  Object.entries(record).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+  });
+});
+
+
+
 // ========================================================================================
 // Use d3 to point to the Filters Section in the HTML File
 // ========================================================================================
@@ -15,7 +32,7 @@ var filters = d3.select("#filters");
 
 
 // ========================================================================================
-// declare a variable called labels which contain the filter fields in addition to date
+// Declare a variable called labels which contain the filter fields in addition to date
 // ========================================================================================
 
 var labels = ["city","state","country","shape"];
@@ -23,7 +40,7 @@ var labels = ["city","state","country","shape"];
 
 
 // ========================================================================================
-// Get natching records for the specified input 
+// Get matching records for the specified input 
 // ========================================================================================
 
 var gatherFilteredRecords = (dt,flts) => {

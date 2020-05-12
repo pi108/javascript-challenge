@@ -8,8 +8,26 @@ var tbody = d3.select("tbody");
 
 
 
+
 // ========================================================================================
-// Get natching records for the specified input 
+// Load the entire data table when the webpage is loaded
+// ========================================================================================
+
+
+data.forEach((record) => 
+{
+  var row = tbody.append("tr");
+  Object.entries(record).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+  });
+});
+
+
+
+
+// ========================================================================================
+// Get matching records for the specified input 
 // ========================================================================================
 
 var gatherFilteredRecords = dt => {
@@ -75,7 +93,7 @@ button.on("click", handleInput);
 
 
 // ============================================================================================================================
-// Update the table with the matching records when the user hits the enter key after speciftign the criteria
+// Update the table with the matching records when the user hits the enter key after specifying the criteria
 // ============================================================================================================================
 
 d3.select("form").on("submit", handleInput);
