@@ -23,6 +23,10 @@ This allows the user to query only by the date of the UFO sighting.
 * - Folder called “css” that contains the CSS file used by the HTML file.
 * - Folder called “images” that contains the images used by the HTML file.
 * - Folder called “js” which contains the javascript file used by the HTML file.
+
+## IMAGE OF THE UFO LEVEL 1 WEBPAGE:
+![](UFO-level-1/static/images/UFO_Level_1_WebPage.PNG)
+
 2.	UFO-level 2: 
 This folder contains the following
 * Index.html file – this is used for the webpage. 
@@ -36,3 +40,5 @@ This allows the user to query by any of the following criteria related to the uf
 * - Folder called “css” that contains the CSS file used by the HTML file.
 * - Folder called “images” that contains the images used by the HTML file.
 * - Folder called “js” which contains the javascript file used by the HTML file.
+
+
