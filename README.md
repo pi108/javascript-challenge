@@ -47,3 +47,9 @@ This allows the user to query by any of the following criteria related to the uf
 ## Additional Information: CIA's Website with Photos of UFOs:
 The following website contains declassified photos and articles of UFOs published by the CIA.
 https://www.cia.gov/library/readingroom/docs/CIA-RDP79B00752A000300130001-1.pdf
+
+
+## Additional Information: Best Podcasts, Documentaries and Websites related to UFOs:
+The following website contains information regarding the best podcasts, documentaries and websites related to UFOs.
+https://www.vice.com/en_us/article/n7jgmg/how-to-get-into-ufos
+
